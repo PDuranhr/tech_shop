@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Tech Shop</title>
+</head>
+<body>
+    <div class="container">
+        <div class="col">
+            <h1>Tech Shop Web Store</h1>
+
+            <label>Unesite ime kupca:</label><br>
+            <input type="text" id="kupac">
+            <br><br>
+
+            <label>Unesite prezime kupca:</label><br>
+            <input type="text" id="prezime">
+            <br><br>
+
+
+            <label>Pretraži proizvode:</label><br>
+            <input type="text" id="search">
+            <br>
+
+            <div class="section-block">
+                <button id="prijava">Prijava</button>
+                <h3>Gotovi uređaji</h3>
+            </div>
+    
+            <div class="proizvod" data-naziv="laptop">
+                <div class="proizvod-info">
+                    <input type="checkbox" name="proizvodi" title="Laptop" value="950">
+                    <label>Laptop (950 €)</label>
+                </div>
+            </div>
+
+            <div class="proizvod"  data-naziv="pc računalo">
+                <div class="proizvod-info">
+                    <input type="checkbox" name="proizvodi" title="Računalo" value="1300"> 
+                    <label>PC Računalo (1300 €)</label>   
+                </div>
+            </div>
+
+            <div class="proizvod" data-naziv="monitor">
+                <div class="proizvod-info">
+                    <input type="checkbox" name="proizvodi" title="Monitor" value="279.83"> 
+                    <label>Monitor (279.83 €)</label>
+                </div>
+            </div>
+
+            <div class="proizvod" data-naziv="printer">
+                <div class="proizvod-info">
+                     <input type="checkbox" name="proizvodi" title="Printer" value="250"> 
+                     <label>Printer (250 €)</label>
+                </div>
+            </div>
+            
+            <h3>Komponente</h3>
+
+            <div class="proizvod" data-naziv="ram 16gb">
+                <div class="proizvod-info">
+                    <input type="checkbox" name="proizvodi" title="RAM 16GB" value="85.35"> 
+                    <label>RAM 16GB (85.35 €)</label>
+                </div>                
+            </div>
+            <div class="proizvod" data-naziv="matična ploča">
+                <div class="proizvod-info">
+                    <input type="checkbox" name="proizvodi" title="Matična ploča" value="220"> 
+                    <label>Matična ploča (220 €)</label> 
+                </div>
+            </div>
+            <div class="proizvod"  data-naziv="ssd 1tb">
+                <div class="proizvod-info">
+                    <input type="checkbox" name="proizvodi" title="SSD 1TB" value="110"> 
+                    <label>SSD 1TB (110 €)</label> 
+                </div>
+            </div>
+            <div class="proizvod" data-naziv="kućište">
+                <div class="proizvod-info">
+                     <input type="checkbox" name="proizvodi" title="Kućište" value="75"> 
+                     <label>Kućište (75 €)</label> 
+                </div>
+            </div>
+            <div class="proizvod" data-naziv="vodeno hlađenje">
+                <div class="proizvod-info">
+                    <input type="checkbox" name="proizvodi" title="Vodeno hlađenje" value="98.99"> 
+                    <label>Vodeno hlađenje (98.99 €)</label> 
+                </div>
+            </div>
+            <div class="proizvod" data-naziv="procesor intel-i5">
+                <div class="proizvod-info">
+                    <input type="checkbox" name="proizvodi" title="Procesor Intel-i5" value="323"> 
+                    <label>Procesor Intel-i5 (323 €)</label> 
+                </div>
+            </div>
+            <div class="proizvod" data-naziv="procesor amd-ryzen-5">
+                <div class="proizvod-info">
+                    <input type="checkbox" name="proizvodi" title="Procesor AMD-Ryzen-5" value="179"> 
+                    <label>Procesor AMD-Ryzen-5 (179 €)</label> 
+                </div>
+            </div>
+            <div class="proizvod" data-naziv="napajanje crosair">
+                <div class="proizvod-info">
+                     <input type="checkbox" name="proizvodi" title="Napajanje CORSAIR" value="150"> 
+                     <label>Napajanje CORSAIR (150 €)</label> 
+                </div>
+            </div>
+
+            <h3>Dodaci</h3>
+
+            <div class="proizvod" data-naziv="miš">
+                 <div class="proizvod-info">
+                    <input type="checkbox" name="proizvodi" title="Miš" value="19.95"> 
+                    <label>Miš (19.95 €)</label> 
+                 </div>
+            </div>
+            <div class="proizvod" data-naziv="tipkovnica">
+                 <div class="proizvod-info">
+                    <input type="checkbox" name="proizvodi" title="Tipkovnica" value="50">
+                    <label>Tipkovnica (50 €)</label> 
+                 </div>
+            </div>
+            <div class="proizvod" data-naziv="slušalice">
+                <div class="proizvod-info">
+                    <input type="checkbox" name="proizvodi" title="Slušalice" value="77.23"> 
+                    <label>Slušalice (77.23 €)</label> 
+                </div>
+            </div>
+            <div class="proizvod" data-naziv="mikrofon akg">
+                <div class="proizvod-info">
+                    <input type="checkbox" name="proizvodi" title="Mikrofon AKG" value="305"> 
+                    <label>Mikrofon AKG (305 €)</label> 
+                </div>
+            </div>
+            <div class="proizvod" data-naziv="toner">
+                <div class="proizvod-info">
+                    <input type="checkbox" name="proizvodi" title="Toner" value="110"> 
+                    <label>Toner (110 €)</label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col kosarica">
+            
+            <div class="user-bar">
+                <span id="loginInfo">Niste prijavljeni</span>
+                        <button id="odjava" style="display:none;">
+                            <i class="bi bi-box-arrow-left"></i> Odjava
+                        </button>
+            </div>
+    
+            <h3>Košarica</h3>
+
+            <p>Odaberite proizvod koji želite dodati u košaricu</p>
+            <div id="rezultat">
+                <div class="empty">
+                    Trenutno nije odabran niti jedan proizvod
+                </div>
+            </div><br>
+
+            <div id="total">
+                Ukupno: 0 €
+            </div>
+
+            <div id="broj_proizvoda">
+                Broj odabranih proizvoda: 0
+            </div>
+
+            <div id="kupac_ispis">
+                Kupac:
+            </div>
+            
+            <div class="gumbi">
+                
+                <div class="lijevi_gumbi">
+                    <button id="kupi">Dodaj u košaricu</button>
+                    <button id="obrisi">Očisti košaricu</button>
+                </div>
+                
+                <button id="placanje">Idi na plaćanje</button>
+
+            </div> 
+        </div>
+    </div>
+    <div id="checkout" class="checkout hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
