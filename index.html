@@ -16,6 +16,7 @@
             <input type="text" id="kupac">
             <br><br>
 
+
             <label>Unesite prezime kupca:</label><br>
             <input type="text" id="prezime">
             <br><br>
@@ -32,29 +33,33 @@
     
             <div class="proizvod" data-naziv="laptop">
                 <div class="proizvod-info">
-                    <input type="checkbox" name="proizvodi" title="Laptop" value="950">
+                    <input type="checkbox" name="proizvodi" title="Laptop" value="950" data-title="Laptop">
                     <label>Laptop (950 €)</label>
+                    <input type="number" class="qty-input" min="1" value="1" data-title="Laptop" disabled>
                 </div>
             </div>
 
             <div class="proizvod"  data-naziv="pc računalo">
                 <div class="proizvod-info">
-                    <input type="checkbox" name="proizvodi" title="Računalo" value="1300"> 
-                    <label>PC Računalo (1300 €)</label>   
+                    <input type="checkbox" name="proizvodi" title="Računalo" value="1300" data-title="Računalo"> 
+                    <label>PC Računalo (1300 €)</label>
+                    <input type="number" class="qty-input" min="1" value="1" data-title="Računalo" disabled>
                 </div>
             </div>
 
             <div class="proizvod" data-naziv="monitor">
                 <div class="proizvod-info">
-                    <input type="checkbox" name="proizvodi" title="Monitor" value="279.83"> 
+                    <input type="checkbox" name="proizvodi" title="Monitor" value="279.83" data-title="Monitor"> 
                     <label>Monitor (279.83 €)</label>
+                    <input type="number" class="qty-input" min="1" value="1" data-title="Monitor" disabled>
                 </div>
             </div>
 
             <div class="proizvod" data-naziv="printer">
                 <div class="proizvod-info">
-                     <input type="checkbox" name="proizvodi" title="Printer" value="250"> 
+                     <input type="checkbox" name="proizvodi" title="Printer" value="250" data-title="Printer"> 
                      <label>Printer (250 €)</label>
+                     <input type="number" class="qty-input" min="1" value="1" data-title="Printer" disabled>
                 </div>
             </div>
             
@@ -62,50 +67,58 @@
 
             <div class="proizvod" data-naziv="ram 16gb">
                 <div class="proizvod-info">
-                    <input type="checkbox" name="proizvodi" title="RAM 16GB" value="85.35"> 
+                    <input type="checkbox" name="proizvodi" title="RAM 16GB" value="85.35" data-title="RAM 16GB"> 
                     <label>RAM 16GB (85.35 €)</label>
+                    <input type="number" class="qty-input" min="1" value="1" data-title="RAM 16GB" disabled>
                 </div>                
             </div>
             <div class="proizvod" data-naziv="matična ploča">
                 <div class="proizvod-info">
-                    <input type="checkbox" name="proizvodi" title="Matična ploča" value="220"> 
-                    <label>Matična ploča (220 €)</label> 
+                    <input type="checkbox" name="proizvodi" title="Matična ploča" value="220" data-title="Matična ploča"> 
+                    <label>Matična ploča (220 €)</label>
+                    <input type="number" class="qty-input" min="1" value="1" data-title="Matična ploča" disabled>
                 </div>
             </div>
             <div class="proizvod"  data-naziv="ssd 1tb">
                 <div class="proizvod-info">
-                    <input type="checkbox" name="proizvodi" title="SSD 1TB" value="110"> 
-                    <label>SSD 1TB (110 €)</label> 
+                    <input type="checkbox" name="proizvodi" title="SSD 1TB" value="110" data-title="SSD 1TB"> 
+                    <label>SSD 1TB (110 €)</label>
+                    <input type="number" class="qty-input" min="1" value="1" data-title="SSD 1TB" disabled>
                 </div>
             </div>
             <div class="proizvod" data-naziv="kućište">
                 <div class="proizvod-info">
-                     <input type="checkbox" name="proizvodi" title="Kućište" value="75"> 
-                     <label>Kućište (75 €)</label> 
+                     <input type="checkbox" name="proizvodi" title="Kućište" value="75" data-title="Kućište"> 
+                     <label>Kućište (75 €)</label>
+                     <input type="number" class="qty-input" min="1" value="1" data-title="Kućište" disabled>
                 </div>
             </div>
             <div class="proizvod" data-naziv="vodeno hlađenje">
                 <div class="proizvod-info">
-                    <input type="checkbox" name="proizvodi" title="Vodeno hlađenje" value="98.99"> 
-                    <label>Vodeno hlađenje (98.99 €)</label> 
+                    <input type="checkbox" name="proizvodi" title="Vodeno hlađenje" value="98.99" data-title="Vodeno hlađenje"> 
+                    <label>Vodeno hlađenje (98.99 €)</label>
+                    <input type="number" class="qty-input" min="1" value="1" data-title="Vodeno hlađenje" disabled>
                 </div>
             </div>
             <div class="proizvod" data-naziv="procesor intel-i5">
                 <div class="proizvod-info">
-                    <input type="checkbox" name="proizvodi" title="Procesor Intel-i5" value="323"> 
-                    <label>Procesor Intel-i5 (323 €)</label> 
+                    <input type="checkbox" name="proizvodi" title="Procesor Intel-i5" value="323" data-title="Procesor Intel-i5"> 
+                    <label>Procesor Intel-i5 (323 €)</label>
+                    <input type="number" class="qty-input" min="1" value="1" data-title="Procesor Intel-i5" disabled>
                 </div>
             </div>
             <div class="proizvod" data-naziv="procesor amd-ryzen-5">
                 <div class="proizvod-info">
-                    <input type="checkbox" name="proizvodi" title="Procesor AMD-Ryzen-5" value="179"> 
-                    <label>Procesor AMD-Ryzen-5 (179 €)</label> 
+                    <input type="checkbox" name="proizvodi" title="Procesor AMD-Ryzen-5" value="179" data-title="Procesor AMD-Ryzen-5"> 
+                    <label>Procesor AMD-Ryzen-5 (179 €)</label>
+                    <input type="number" class="qty-input" min="1" value="1" data-title="Procesor AMD-Ryzen-5" disabled>
                 </div>
             </div>
             <div class="proizvod" data-naziv="napajanje crosair">
                 <div class="proizvod-info">
-                     <input type="checkbox" name="proizvodi" title="Napajanje CORSAIR" value="150"> 
-                     <label>Napajanje CORSAIR (150 €)</label> 
+                     <input type="checkbox" name="proizvodi" title="Napajanje CORSAIR" value="150" data-title="Napajanje CORSAIR"> 
+                     <label>Napajanje CORSAIR (150 €)</label>
+                     <input type="number" class="qty-input" min="1" value="1" data-title="Napajanje CORSAIR" disabled>
                 </div>
             </div>
 
@@ -113,32 +126,37 @@
 
             <div class="proizvod" data-naziv="miš">
                  <div class="proizvod-info">
-                    <input type="checkbox" name="proizvodi" title="Miš" value="19.95"> 
-                    <label>Miš (19.95 €)</label> 
+                    <input type="checkbox" name="proizvodi" title="Miš" value="19.95" data-title="Miš"> 
+                    <label>Miš (19.95 €)</label>
+                    <input type="number" class="qty-input" min="1" value="1" data-title="Miš" disabled>
                  </div>
             </div>
             <div class="proizvod" data-naziv="tipkovnica">
                  <div class="proizvod-info">
-                    <input type="checkbox" name="proizvodi" title="Tipkovnica" value="50">
-                    <label>Tipkovnica (50 €)</label> 
+                    <input type="checkbox" name="proizvodi" title="Tipkovnica" value="50" data-title="Tipkovnica">
+                    <label>Tipkovnica (50 €)</label>
+                    <input type="number" class="qty-input" min="1" value="1" data-title="Tipkovnica" disabled>
                  </div>
             </div>
             <div class="proizvod" data-naziv="slušalice">
                 <div class="proizvod-info">
-                    <input type="checkbox" name="proizvodi" title="Slušalice" value="77.23"> 
-                    <label>Slušalice (77.23 €)</label> 
+                    <input type="checkbox" name="proizvodi" title="Slušalice" value="77.23" data-title="Slušalice"> 
+                    <label>Slušalice (77.23 €)</label>
+                    <input type="number" class="qty-input" min="1" value="1" data-title="Slušalice" disabled>
                 </div>
             </div>
             <div class="proizvod" data-naziv="mikrofon akg">
                 <div class="proizvod-info">
-                    <input type="checkbox" name="proizvodi" title="Mikrofon AKG" value="305"> 
-                    <label>Mikrofon AKG (305 €)</label> 
+                    <input type="checkbox" name="proizvodi" title="Mikrofon AKG" value="305" data-title="Mikrofon AKG"> 
+                    <label>Mikrofon AKG (305 €)</label>
+                    <input type="number" class="qty-input" min="1" value="1" data-title="Mikrofon AKG" disabled>
                 </div>
             </div>
             <div class="proizvod" data-naziv="toner">
                 <div class="proizvod-info">
-                    <input type="checkbox" name="proizvodi" title="Toner" value="110"> 
+                    <input type="checkbox" name="proizvodi" title="Toner" value="110" data-title="Toner"> 
                     <label>Toner (110 €)</label>
+                    <input type="number" class="qty-input" min="1" value="1" data-title="Toner" disabled>
                 </div>
             </div>
         </div>

@@ -17,13 +17,36 @@
     proizvodiDivovi.forEach(div => {
         div.addEventListener("click", function (e) {
 
-            // ako je klik direktno na checkbox, ne radi ništa
-            if (e.target.type === "checkbox") return;
+            // ako je klik direktno na checkbox ili number input, ne radi ništa
+            if (e.target.type === "checkbox" || e.target.type === "number") return;
 
             let checkbox = this.querySelector('input[type="checkbox"]');
             checkbox.checked = !checkbox.checked;
+            updateQtyInputState();
         });
     });
+
+    // omogućiti/onemogućiti quantity input kada se checkbox promijeni
+    document.addEventListener("change", function(e) {
+        if (e.target.type === "checkbox" && e.target.name === "proizvodi") {
+            if (!prijavljen) {
+                e.target.checked = false;
+                alert("Morate se prijaviti prije nego što možete dodavati proizvode u košaricu");
+                return;
+            }
+            updateQtyInputState();
+        }
+    });
+
+    function updateQtyInputState() {
+        let checkboxes = document.querySelectorAll('input[name="proizvodi"]');
+        checkboxes.forEach(checkbox => {
+            let qtyInput = checkbox.parentElement.querySelector('.qty-input');
+            if (qtyInput) {
+                qtyInput.disabled = !checkbox.checked;
+            }
+        });
+    }
 
     // gumb za micanje
     document.addEventListener("click", function(e){
@@ -38,6 +61,7 @@
 
                 if(p.title === title){
                     p.checked = false;
+                    updateQtyInputState();
                 }
 
             });
@@ -68,11 +92,15 @@
 
             if(item.checked){
 
+                let qtyInput = item.parentElement.querySelector('.qty-input');
+                let qty = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
+                let itemTotal = parseFloat(item.value) * qty;
+
                 rezultat_naziv.push(item.title);
 
                 rezultat += 
                     `<li>
-                        ${item.title} - ${item.value} €
+                        <span>${item.title} x${qty} - ${itemTotal.toFixed(2)} €</span>
 
                         <button 
                             class="remove" 
@@ -80,8 +108,8 @@
                         </button>
                     </li>`;
 
-                ukupno += parseFloat(item.value);
-                brojac++;
+                ukupno += itemTotal;
+                brojac += qty;
             }
 
         });
@@ -135,6 +163,8 @@
 
         });
 
+        updateQtyInputState();
+
         document.getElementById("rezultat").innerHTML =
         `<div class="empty">
             Trenutno nije odabran niti jedan proizvod
@@ -176,8 +206,6 @@
     //fja za idi na plaćanje
     function idiNaPlacanje(){
 
-        let proizvodi = document.querySelectorAll('input[name="proizvodi"]:checked');
-
         let kupac = document.getElementById("kupac").value;
         let prezime = document.getElementById("prezime").value;
 
@@ -188,11 +216,10 @@
             return;
         }
 
+        let proizvodi = document.querySelectorAll('input[name="proizvodi"]:checked');
+        
         if(proizvodi.length === 0){
-            document.getElementById("rezultat").innerHTML =
-            `<div class="empty">
-                Košarica je prazna. Dodajte proizvode prije plaćanja.
-            </div>`;
+            alert("Košarica je prazna. Dodajte proizvode prije plaćanja.");
             return;
         }
 
@@ -200,8 +227,12 @@
         let lista = "";
 
         proizvodi.forEach(p => {
-            lista += `<li>${p.title} - ${p.value} €</li>`;
-            ukupno += parseFloat(p.value);
+            let qtyInput = p.parentElement.querySelector('.qty-input');
+            let qty = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
+            let itemTotal = parseFloat(p.value) * qty;
+            
+            lista += `<li>${p.title} x${qty} - ${itemTotal.toFixed(2)} €</li>`;
+            ukupno += itemTotal;
         });
 
         document.getElementById("checkout").classList.remove("hidden");
@@ -245,6 +276,8 @@
         // reset košarice
         let proizvodi = document.querySelectorAll('input[name="proizvodi"]');
         proizvodi.forEach(p => p.checked = false);
+
+        updateQtyInputState();
 
         document.getElementById("rezultat").innerHTML =
         `<div class="empty">Trenutno nije odabran niti jedan proizvod</div>`;
@@ -301,6 +334,12 @@
         // reset košarice
         let proizvodi = document.querySelectorAll('input[name="proizvodi"]');
         proizvodi.forEach(p => p.checked = false);
+
+        // reset količina na 1
+        let qtyInputs = document.querySelectorAll('.qty-input');
+        qtyInputs.forEach(qty => qty.value = 1);
+
+        updateQtyInputState();
 
         document.getElementById("rezultat").innerHTML =
             `<div class="empty">Trenutno nije odabran niti jedan proizvod</div>`;
